@@ -5,4 +5,3 @@ RUN apt update && apt install -y lighttpd && rm -rf /var/cache/apt/*
 ADD conf /etc/lighttpd/conf.d/
 
 ENTRYPOINT ["/usr/bin/lighttpd"]
-CMD ["-D", "-f", "/etc/lighttpd/lighttpd.conf"]
