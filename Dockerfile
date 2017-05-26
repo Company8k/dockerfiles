@@ -1,8 +1,6 @@
 FROM debian
 MAINTAINER Eightk <company@eigh.tk>
 
-RUN apt-get update && apt-get install -y lighttpd && apt-get clean \
-    && echo "include \"conf.d/cgi.conf\"" >> /etc/lighttpd/lighttpd.conf
-ADD conf /etc/lighttpd/conf.d/
-
-ENTRYPOINT ["lighttpd"]
+##install opensips
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 049AD65B && echo "deb http://apt.opensips.org jessie 2.3-releases" >>/etc/apt/sources.list \
+    && apt-get update && apt-get install -y opensips
