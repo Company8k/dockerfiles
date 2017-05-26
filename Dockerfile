@@ -13,5 +13,5 @@ RUN opensipsdbctl create
 
 EXPOSE 5060/udp
 USER opensips
-CMD opensips -f /etc/opensips/opensips.cfg -w /var/tmp -P /run/opensips.pid -uid opensips
+CMD opensips -f /etc/opensips/opensips.cfg -w /var/tmp -P /run/opensips.pid -u opensips
 ##TODO split in two containers
