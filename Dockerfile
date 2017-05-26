@@ -5,7 +5,7 @@ ENV DBENGINE=DBTEXT
 
 ##install opensips
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 049AD65B && echo "deb http://apt.opensips.org jessie 2.3-releases" >>/etc/apt/sources.list \
-    && apt-get update && apt-get install -y opensips
+    && apt-get update && apt-get install -y opensips opensips-http-modules
     #&& touch /var/run/opensips.pid
 ##configure db
 COPY conf /etc/opensips
