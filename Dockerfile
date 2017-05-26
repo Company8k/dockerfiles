@@ -11,7 +11,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 049AD65B && echo "d
 COPY conf /etc/opensips
 RUN opensipsdbctl create
 
-EXPOSE 5060/udp
+EXPOSE 8888 5060/udp
 USER opensips
 CMD opensips -f /etc/opensips/opensips.cfg -w /var/tmp -P /run/opensips.pid
 ##TODO split in two containers
