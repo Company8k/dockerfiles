@@ -1,8 +1,10 @@
 # dockerfiles
 ---
 ugly
-[![Docker Stars](https://img.shields.io/docker/stars/_/eightk.svg)][stars]
-[![Docker Automated build](https://img.shields.io/docker/automated/eightk/lighty.svg)][pulls]
+![Docker Build](https://img.shields.io/docker/build/eightk/basic.svg)
+![Docker Automated build](https://img.shields.io/docker/automated/eightk/basic.svg)
+![Docker Pulls](https://img.shields.io/docker/pulls/eightk/basic.svg)
+![Docker Stars](https://img.shields.io/docker/stars/eightk/basic.svg)
 
 ##TODO
 ---
