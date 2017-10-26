@@ -1,8 +1,4 @@
-FROM debian
+FROM debian:9
 MAINTAINER Eightk <company@eigh.tk>
 
-RUN apt-get update && apt-get install -y lighttpd && apt-get clean \
-    && echo "include \"conf.d/cgi.conf\"" >> /etc/lighttpd/lighttpd.conf
-ADD conf /etc/lighttpd/conf.d/
-
-ENTRYPOINT ["lighttpd"]
+RUN apt-get update && apt-get install -yq build-essential wget && apt-get clean
