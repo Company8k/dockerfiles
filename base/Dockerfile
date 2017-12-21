@@ -10,8 +10,8 @@ FROM debian:9
 
 ENV JAVA_VERSION=8u151 \
     JAVA_VERSION_PREFIX=1.8.0_151 \
-    JAVA_HOME /opt/jre$JAVA_VERSION_PREFIX \
-    PATH $JAVA_HOME/bin:$PATH
+    JAVA_HOME=/opt/jre$JAVA_VERSION_PREFIX \
+    PATH=$JAVA_HOME/bin:$PATH
 
 RUN apt-get update && \
     apt-get -y install \
