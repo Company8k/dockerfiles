@@ -6,9 +6,9 @@
 # Contributors:
 # Codenvy, S.A. - initial API and implementation
 
-FROM debian:
-ENV JAVA_VERSION=8u65 \
-    JAVA_VERSION_PREFIX=1.8.0_65
+FROM debian:9
+ENV JAVA_VERSION=8u151 \
+    JAVA_VERSION_PREFIX=1.8.0_151
 ENV JAVA_HOME /opt/jre$JAVA_VERSION_PREFIX
 ENV PATH $JAVA_HOME/bin:$PATH
 RUN apt-get update && \
@@ -37,7 +37,7 @@ RUN PASS=$(openssl rand -base64 32) && \
    --no-check-certificate \
    --header "Cookie: oraclelicense=accept-securebackup-cookie" \
    -qO- \
-   "http://download.oracle.com/otn-pub/java/jdk/$JAVA_VERSION-b17/jre-$JAVA_VERSION-linux-x64.tar.gz" | tar -zx -C /opt/ && \
+   "http://download.oracle.com/otn-pub/java/jdk/$JAVA_VERSION-b12/e758a0de34e24606bca991d704f6dcbf/jre-$JAVA_VERSION-linux-x64.tar.gz" | tar -zx -C /opt/ && \
     apt-get -y autoremove \
     && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/* && \
@@ -51,3 +51,5 @@ EXPOSE 22 4403
 WORKDIR /projects
 ENTRYPOINT ["/home/user/entrypoint.sh"]
 CMD tail -f /dev/null
+
+# wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u151-b16/47ada926885c43f4ee2a8426a44af634/jdk-8u151-linux-x64.tar.gz"
